@@ -1,0 +1,31 @@
+server:
+  servlet:
+    context-path: /
+  error:
+    include-message: always
+    include-binding-errors: always
+
+
+spring:
+  mvc:
+    view:
+      suffix: .jsp
+      prefix: /WEB-INF/view/
+  datasource:
+    url: jdbc:mysql://localhost:3306/dbLdap?createDatabaseIfNotExist=true
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  ldap:
+
+    urls: ldap://192.168.70.133:389
+    base: dc=ensate,dc=uae,dc=ac,dc=ma
+    username: cn=admin,dc=ensate,dc=uae,dc=ac,dc=ma
+    password: P@ssw0rd
